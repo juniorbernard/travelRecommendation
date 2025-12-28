@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+/* body */
+body {
+  background: linear-gradient(rgb(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("./imgs/vistaPreviaAgrega.jpg") no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+}
+/* header */
+header {
+  width: 100%;
+  padding: 20px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+/* search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9); /* Fond blanc presque opaque */
+  padding: 5px 10px;
+  border-radius: 30px; /* Coins très arrondis */
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  padding: 8px 15px;
+  outline: none;
+  width: 200px;
+}
+
+/* Bouton Search (Bleu/Vert canard) */
+.btn-search {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Bouton Clear (Translucide/Gris) */
+.btn-clear {
+  background-color: #00a0a0;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* social sidebar */
+.social-sidebar {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+/* social sidebar hover  */
+.social-sidebar i:hover {
+  color: #008080;
+}
+/* hero section */
+.hero {
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  padding-left: 10%; /* Décale le texte du bord gauche (comme sur l'image) */
+}
+
+.hero-content {
+  max-width: 600px; /* Empêche le texte de s'étaler sur toute la largeur */
+}
+
+.hero-content h1 {
+  font-size: 4.5rem; /* Très gros titre */
+  font-weight: 900;
+  line-height: 1.1; /* Rapproche les lignes entre elles */
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Ombre pour la lisibilité */
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+  max-width: 500px;
+}
+/* book button */
+.btn-book {
+  background-color: #008080; /* Même vert que la barre de recherche */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-book:hover {
+  background-color: #006666;
+  transform: scale(1.05); /* Petit effet de zoom au survol */
+}
+
+/* about space */
+.about-section {
+  padding: 120px 10% 50px;
+}
+.about-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.description-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    /* auto-fit : remplit l'espace disponible */
+    /* minmax(250px, 1fr) : chaque carte fait au minimum 250px et au maximum 1 part de l'espace */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; /* Espacement entre les cartes */
+    width: 100%;
+}
+
+.team-card {
+    background: rgba(15, 52, 96, 0.5); /* Bleu nuit transparent */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    /* Pour que le bouton reste toujours en bas de la carte */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.card-header {
+    display: flex;
+    align-items: center; /* Aligne l'icône et le texte sur la même ligne */
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-header i {
+    font-size: 35px; /* Taille de l'avatar */
+    color: #4facfe;  /* Une couleur bleutée pour ressortir */
+}
+.role-btn {
+    background: #2a4d8c; /* Bleu foncé */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+    
+    .about-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* On empile les éléments */
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: none; /* Souvent on cache le menu derrière un bouton 'hamburger' sur mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* On réduit la taille du titre */
+    }
+
+    .social-sidebar {
+        bottom: 20px; /* On place les icônes en bas plutôt qu'à gauche */
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+    }
+}
