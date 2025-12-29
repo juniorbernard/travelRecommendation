@@ -242,3 +242,204 @@ nav {
         flex-direction: row;
     }
 }
+
+/* contact section */
+.contact-section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.contact-container{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  
+}
+
+.contact-text h2{
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.contact-form-box{
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border:  1px solid rgba(255,255,255,0.2);
+  padding: 40px;
+  border-radius:15px;
+  width: 500px;
+}
+
+.input-group{
+  margin-bottom: 20px;
+}
+
+.input-group input, .input-group textarea{
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255, 0.3);
+  border-radius: 5px;
+  padding: 12px;
+  color:white;
+  outline: none;
+}
+
+.btn-submit{
+  width: 100%;
+  background-color: #008080;
+  color:white;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@media(max-width:992){
+  .contact-container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-text h2{
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  .contact-form-box{
+    width: 100%;
+  }
+}
+/* ==========================================
+   TABLETTE (600px à 1024px)
+   ========================================== */
+@media screen and (max-width: 1024px) {
+    /* Navigation */
+    .nav-links { gap: 15px; }
+    .search-bar input { width: 150px; }
+
+    /* Hero Section */
+    .hero-content h1 { font-size: 3.5rem; }
+    
+    /* Team Page */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes au lieu de 3 */
+    }
+
+    /* Contact Page */
+    .contact-container { padding: 0 5%; }
+}
+
+/* ==========================================
+   MOBILE (Moins de 600px)
+   ========================================== */
+@media screen and (max-width: 600px) {
+    /* Header : On empile les éléments */
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .nav-links { display: none; } /* On cache souvent le menu sur petit mobile */
+    
+    /* Hero : Texte centré pour plus de lisibilité */
+    .hero {
+        padding-left: 0;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 0.9rem; padding: 0 20px; }
+
+    /* Barre latérale sociale : on la met en bas horizontalement */
+    .social-sidebar {
+        flex-direction: row;
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Team & Contact : 1 seule colonne */
+    .team-grid, .contact-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .contact-form-box { width: 90%; }
+}
+
+/* ==========================================
+   TV & GRANDS ÉCRANS (Plus de 1920px)
+   ========================================== */
+@media screen and (min-width: 1921px) {
+    /* On limite la largeur du contenu pour pas qu'il s'étire à l'infini */
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    
+    header, .hero, .about-section, .contact-section {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 { font-size: 6rem; }
+    .hero-content p { font-size: 1.5rem; max-width: 800px; }
+}
+
+/*  cache le checkbox et le huburger sur pc*/
+.menu-checkbox, .hamburger {
+  display: none;
+}
+/* style des barres du hamburger */
+.hamburger{
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span{
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+}
+/* a */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex; /* On montre le hamburger */
+    }
+
+    .nav-links {
+        display: none; /* On cache les liens par défaut */
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* SI LA CHECKBOX EST COCHÉE : ON AFFICHE LES LIENS */
+    .menu-checkbox:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Animation optionnelle : transforme le hamburger en X */
+    .menu-checkbox:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .menu-checkbox:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
