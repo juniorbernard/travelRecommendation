@@ -56,7 +56,7 @@ function searchItems(query, items) {
   if (!q) return [];
   return items.filter(
     (item) =>
-      normalize(item.name).includes(q) ||
+      normalize(item.name).includes(q) || 
       normalize(item.country || "").includes(q) ||
       normalize(item.description).includes(q)
   );
@@ -64,6 +64,10 @@ function searchItems(query, items) {
 
 // displayItems function
 function displayItems(items) {
+  if(items.length === 0) {
+    resultsDropdown.innerHTML = "<div class=\"result-item\">No results found</div>";
+    return;
+  }
   resultsDropdown.innerHTML += items
     .map(
       (item) =>
